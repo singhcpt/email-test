@@ -29,7 +29,9 @@ var exportBtn = document.getElementById('export');
         }
         
         function clearEmailsFromList() {
+            alert('in');
             emails = [];
+            formatEmailList(emails);
         }
 
         new DroneDeploy({
