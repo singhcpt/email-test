@@ -15,7 +15,6 @@ var exportBtn = document.getElementById('export');
                 //es6 template string
                 return `<li class="email">${email}<i class="delete">X</i></li>`;
             }).join('');
-            alert('formatted');
         }
 
         function addEmailToList(email) {
@@ -30,7 +29,6 @@ var exportBtn = document.getElementById('export');
         }
         
         function clearEmailsFromList() {
-            alert('in');
             emails = [];
             formatEmailList(emails);
         }
