@@ -21,7 +21,6 @@ var exportBtn = document.getElementById('export');
             emails.push(email);
             formatEmailList(emails);
             emailInput.value = '';
-            alert(emails)
         }
 
         function deleteEmailFromList(emailIndex) {
@@ -65,7 +64,6 @@ var exportBtn = document.getElementById('export');
                 });
 
                 addEmailBtn.addEventListener('click', function(event) {
-                    alert('clicked');
                     var newEmail = emailInput.value;
                     addEmailToList(newEmail);
                 });
