@@ -27,6 +27,10 @@ var exportBtn = document.getElementById('export');
             emails.splice(emailIndex, 1);
             formatEmailList(emails);
         }
+        
+        function clearEmailsFromList() {
+            emails = [];
+        }
 
         new DroneDeploy({
                 version: 1
@@ -66,5 +70,9 @@ var exportBtn = document.getElementById('export');
                 addEmailBtn.addEventListener('click', function(event) {
                     var newEmail = emailInput.value;
                     addEmailToList(newEmail);
+                });
+
+                clearEmailBtn.addEventListener('click', function(event) {
+                    clearEmailsFromList();
                 });
             });
