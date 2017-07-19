@@ -7,6 +7,7 @@ var exportBtn = document.getElementById('export');
         var mergeCheckbox = document.getElementById('merge-box');
         var projectionValue = document.getElementById('projection-value');
         var resolutionValue = document.getElementById('resolution-value');
+        var fileFormat = document.getElementById('file-format');
         var emails = [];
 
         function formatEmailList(emails) {
@@ -51,10 +52,18 @@ var exportBtn = document.getElementById('export');
                     dronedeployApi.Exporter.send({
                             layer: layerSelect.value,
                             email: emails,
+                            
+                            file_format: 'geotiff',
                             merge: mergeCheckbox.checked ? true : false,
                             projection: projectionValue.value,
-                            resolution: resolutionValue.value === 0 ? 'native' : resolutionValue.value
+                            planId: '5968d2856cbda58f3fb0fade',
+                            resolution: resolutionValue.value === 0 ? 'native' : resolutionValue.value,
+                            //url: ['https://requestb.in/smbtfbsm'],
+                            /*webhook: {
+                                url: 'https://requestb.in/smbtfbsm'
+                            }*/
                         })
+                    
                         .then(function(exportId) {
                                 dronedeployApi.Messaging.showToast('Export successful!', {
                                     timeout: -1
